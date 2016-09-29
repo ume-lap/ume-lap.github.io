@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset = "utf-8" >
+    <meta http-equiv = "X-UA-Compatible"  content = "IE=edge">
+    <meta name       = "viewport"         content = "width=device-width, initial-scale=1">
+    <title>一覧ビュー</title>
+    <link rel = "stylesheet" type = "text/css" href = "./css/bootstrap.min.css"                 media = "screen" />
+    <link rel = "stylesheet" type = "text/css" href = "./js/amcharts/plugins/export/export.css" media = "screen" />
+    <link rel = "stylesheet" type = "text/css" href = "./css/style_list.css"                    media = "screen" />
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class = "container">
+      
+      <header>
+        <div class = "page-header">
+          <nav class = "navbar navbar-default navbar-fixed-top" style = "margin-bottom: 20px;">
+            <div class = "container-fluid">
+              <div class = "navbar-header">
+                <button type = "button" class = "navbar-toggle collapsed" data-toggle = "collapse" data-target = "#navbarTarget">
+                  <span class = "sr-only">Toggle navigation</span>
+                  <span class = "icon-bar"></span>
+                  <span class = "icon-bar"></span>
+                  <span class = "icon-bar"></span>
+                </button>
+                <a class = "navbar-brand" href = "#">林洋ラン園</a>
+              </div>
+              
+              <div class = "collapse navbar-collapse" id = "navbarTarget">
+                <ul class = "nav navbar-nav">
+                  <li><a href = "#">施設1（まだ未リンク）</a></li>
+                  <li><a href = "#">施設2</a></li>
+                  <li><a href = "#">施設3</a></li>
+                </ul>
+              </div> <!-- /navbarEexample -->
+            </div><!-- /container-fluid -->
+          </nav>
+
+        </div><!-- /page-header -->
+      </header>
+      
+      <article>
+        <div class = "center-block" style = "width:400px; text-align:center; margin-bottom: 20px;">
+          <h2>快晴</h2>
+          <p>豊田市榊野町</p>
+          <img src = "./img/weather.png" class = "img-responsive" alt = "サンプル画像" style = "display:block; margin-left: auto; margin-right: auto;">
+        </div>
+
+        <div id = "sortarea">
+          <div id = "sortable" class = "ui-sortable">
+            <div class = "panel panel-default table-responsive">
+              <table class = "table table-bordered table-back table-border">
+                <tbody>
+                  <tr>
+                    <th>エリア1</th>
+                    <td>温度 23.6℃</td>
+                    <td><a href = "./eachpage.html">リンク</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><!-- /table-responsive -->
+            <div class = "panel panel-default table-responsive"><!-- panelで角丸-->
+              <table class = "table table-bordered table-back">
+                <tbody>
+                  <tr>
+                    <th>エリア2</th>
+                    <td>温度 23.6℃</td>
+                    <td><a href = "./eachpage.html">リンク</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><!-- /table-responsive -->
+            <div class = "panel panel-default table-responsive">
+              <table class = "table table-bordered table-back">
+                <tbody>
+                  <tr>
+                    <th>エリア3</th>
+                    <td>温度 23.6℃</td>
+                    <td><a href = "./eachpage.html">リンク</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><!-- /table-responsive -->
+          </div><!-- /sortable -->
+        </div><!-- /sortarea -->
+
+        <!-- amCharts -->
+        <div id = "chartdiv"></div>
+
+      </article>
+      
+      <footer>
+        <div class = "back-gray">
+          <div class = "pull-left"> <button type = "button" class = "btn btn-default">メニューへ戻る</button></div>
+        </div><!-- /content -->
+      </footer>
+      
+    </div><!-- /container -->
+   
+    <!-- jquery -->
+    <script src = "./js/jquery-1.11.1.min.js"></script>
+    <script src = "./js/jquery-ui.min.js"></script>
+    <script src = "./js/jquery.ui.touch-punch.min.js"></script>
+    <script>
+      $(function() {
+        $( "#sortable" ).sortable();
+        $( "#sortable" ).disableSelection();
+      });
+    </script>
+
+
+
+    <!-- bootstrap -->
+    <script src = "./js/bootstrap.min.js"></script>
+
+    <!-- amcharts -->
+    <script src = "./js/amcharts/amcharts.js"></script>
+    <script src = "./js/amcharts/serial.js"></script>
+    <script src = "./js/amcharts/plugins/export/export.min.js"></script>
+    <script src = "./js/amcharts/themes/light.js"></script>
+    <script src = "./js/chartcode.js"></script>
+
+  </body>
+</html>
+
