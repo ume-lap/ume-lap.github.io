@@ -2,6 +2,45 @@
  *  ユーザCSS
  * */
 
+
+.container {
+  width: 100%;
+}
+
+
+/* 背景色 */
+.strong-green-literal-white{
+  background-color: #003B00;
+  color: #ffffff;
+  text-align: center;
+  padding: 1em 0.5em;
+}
+.white-literal-strong-green{
+  background-color: #ffffff;
+  color: #003B00;
+  text-align: center;
+  padding: 1em 0.5em;
+}
+.light-green-literal-white{
+  background-color: #005900;
+  color: #ffffff;
+  text-align: center;
+  padding: 1em 0.5em;
+}
+.white-literal-light-green{
+  background-color: #ffffff;
+  color: #005900;
+  text-align: center;
+  padding: 1em 0.5em;
+}
+
+.white-green-literal-white{
+  background-color: #23B04A;
+  color: #ffffff;
+  text-align: center;
+  padding: 1em 0.5em;
+}
+
 /* navbar 全体の背景色とボーダーカラー */
 .navbar-default {
   background-color: #6b8e23;
@@ -126,42 +165,35 @@ background-color: #65baad;
   background-color: transparent;
 }
 
-/*
-#sortarea {
-  background-color : #98d98e;
-}
-
-#sortable {
-  list-style-type: none;
-}
-
-#sortable li {
-  margin: 20px;
-  padding-bottom: 20px;
-  border: double 5px #006400;
-}
-
-
-/* テーブル系 
+/* テーブル系 */ 
 .table-back {
   background-color: #ddffdd;
 }
-
-table, td, th{
-  border: solid 2px #ff0000;
+/* テーブル枠線 */
+table, tbody, tr, td, th{
+  border: solid 0.1px #ffffff;
 }
 
-/* bootstrapの表の枠線を上書き 
+/* bootstrapの表の枠線を上書き */
 .table-bordered th,
+.table-bordered tbody,
 .table-bordered td {
-  border: 1px solid #228b22 !important;
+   border: 1px solid #228b22 !important;
 }
 .panel-default {
-  border-color: #228b22;
+  border-color: #ffffff;
 }
 /*　/bootstrapの表の枠線を上書き */
 
+.align-vertical-center {
+  text-align: center;
+  vertical-align: middle !important;
+}
+
+
 footer {
-  margin-top: 2em;
+  color: gray;
+  text-align: center;
+  margin-top: 5em;
   margin-bottom 2em;
 }
