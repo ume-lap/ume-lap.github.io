@@ -3,6 +3,7 @@
  * */
 
 .container {
+  font-size: x-large;
   padding-right: 0px;
   padding-left: 0px;
   margin-right: 0px;
@@ -12,8 +13,13 @@
 .table-list {
   margin-bottom: 0px;
 }
+.table-list>tbody>tr {
+  font-size: xx-large;
+}
 .table-list>tbody>tr>td {
-  width: 4em;
+  width: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 #sortarea {
