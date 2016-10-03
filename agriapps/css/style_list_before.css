@@ -1,0 +1,43 @@
+/* 
+ *  ユーザCSS
+ * */
+
+.container {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.table-list {
+  margin-bottom: 0px;
+}
+.table-list>tbody>tr>td {
+  width: 4em;
+}
+
+#sortarea {
+  /*background-color : #98d98e;*/
+}
+
+#sortable {
+  list-style-type: none;
+}
+
+#sortable li {
+  margin: 20px;
+  padding-bottom: 20px;
+  border: double 5px #006400;
+}
+
+.white-icon {
+  color: #ffffff;
+}
+
+.history {
+  margin-top: 2em;
+}
+
+.history-th {
+  padding: 0px;
+}
