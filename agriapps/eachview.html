@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset = "utf-8" >
+    <meta http-equiv = "X-UA-Compatible"  content = "IE=edge">
+    <meta name       = "viewport"         content = "width=device-width, initial-scale=1">
+    <title>個別ビュー</title>
+    <link rel = "stylesheet" type = "text/css" href = "./css/bootstrap.min.css"                 media = "screen" />
+    <link rel = "stylesheet" type = "text/css" href = "./js/amcharts/plugins/export/export.css" media = "screen" />
+    <link rel = "stylesheet" type = "text/css" href = "./css/navbar_ipad.css" media = "screen" />
+    <link rel = "stylesheet" type = "text/css" href = "./css/style.css" media = "screen" />
+    <link rel = "stylesheet" type = "text/css" href = "./css/style_each.css" media = "screen" />
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body background = "./img/bg.jpg">
+    <div class = "container">
+      
+      <header>
+        <div class = "page-header">
+
+          <nav class = "navbar navbar-default" style = "background-color: #005900; color: #ffffff; padding: 40px 20px; margin-bottom: 20px;">
+            <div class = "container-fluid">
+              <div class = "navbar-header">
+                <button type = "button" class = "navbar-toggle collapsed" data-toggle = "collapse" data-target = "#navbarTarget">
+                  <span class = "icon-bar"></span>
+                  <span class = "icon-bar"></span>
+                  <span class = "icon-bar"></span>
+                </button>
+                <a class = "navbar-brand"  href = "./listview.html">東ハウス1</a>
+              </div><!-- /navbar-header -->
+              
+              <div class = "collapse navbar-collapse" id = "navbarTarget">
+                <ul class = "nav navbar-nav">
+                  <li><a href = "#">施設1</a></li>
+                  <li><a href = "#">施設2</a></li>
+                  <li><a href = "#">施設3</a></li>
+                </ul>
+              </div> <!-- /navbarEexample -->
+            </div><!-- /container-fluid -->
+          </nav>
+
+        </div><!-- /page-header -->
+      </header>
+      
+      <article>
+        <div class = "center-block" style = "text-align:center; margin-bottom: 20px;">
+          <h2>快晴</h2>
+          <p>京都市伏見区</p>
+          <img src = "./img/weather.png" class = "img-responsive" alt = "サンプル画像">
+        </div>
+
+        <div class = "table-responsive">
+          <table class = "table table-hover" style = "background-color: #ffffff; table-layout: fixed;">
+            <tbody>
+              <tr class = "top-temprature">
+                <td style = "vertical-align: bottom;"><img src = "./img/green_single.png"/></td>
+                <td><span style = "font-size: 32px;">温度</span><br/><span style = "font-size: 64px;">28.6°</span></td>
+                <td style = "vertical-align: bottom;"><img src = "./img/green_single.png"/></td>
+              </tr>
+              <tr>
+                <td class = "max-temprature">最高<br/><span style = "font-size: 50px;">32.2°</span></td>
+                <td class = "min-temprature">最低<br/><span style = "font-size: 50px;">9.1° </span></td>
+                <td class = "average-temprature">平均<br/><span style = "font-size: 50px;"> 22.1°</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="chartdiv" style = "width:100%; height: 400px; background-color: #ffffff"></div>
+        <br/>
+        <br/>
+        <div class = "history">
+          <table class = "table table-bordered">
+            <caption class = "twinleaf" style = "text-align: center;">異常履歴</caption> 
+            <thead>
+            </thead>
+            <tbody>
+              <tr>
+                <th rowspan = 3 class = "history-th align-vertical-center white-green-literal-white">1</th>
+                <td colspan = 2 class = "light-green-literal-white" style = "text-align: center;">林洋ラン園ビニールハウス1</td>
+              </tr>
+              <tr>
+                <td class = "white-literal-black">2016/10/21 11:24</td>
+                <td rowspan = 2 class = "align-vertical-center white-literal-black">発生</td>
+              </tr>
+              <tr>
+                <td class = "white-literal-black">温度上限異常</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th rowspan = 3 class = "history-th align-vertical-center white-green-literal-white">2</th>
+                <td colspan = 2 class = "light-green-literal-white" style = "text-align: center;">林洋ラン園ビニールハウス5</td>
+              </tr>
+              <tr>
+                <td class = "white-literal-black">2016/10/21 13:10</td>
+                <td rowspan = 2 class = "align-vertical-center white-literal-black">発生</td>
+              </tr>
+              <tr>
+                <td class = "white-literal-black">温度上限異常</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th rowspan = 3 class = "history-th align-vertical-center white-green-literal-white">3</th>
+                <td colspan = 2 class = "light-green-literal-white" style = "text-align: center;">林洋ラン園ビニールハウス5</td>
+              </tr>
+              <tr>
+                <td class = "white-literal-black">2016/10/21 9:15</td>
+                <td rowspan = 2 class = "align-vertical-center white-literal-black">発生</td>
+              </tr>
+              <tr>
+                <td class = "white-literal-black">温度上限異常</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </article>
+      
+      <footer>
+      </footer>
+      
+    </div><!-- /container -->
+    
+    <!-- jquery -->
+    <script src = "./js/jquery-1.11.1.min.js"></script>
+    <script src = "./js/jquery-ui.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src = "./js/bootstrap.min.js"></script>
+
+    <!-- amcharts -->
+    <script src = "./js/amcharts_yuryo/amcharts.js"></script>
+    <script src = "./js/amcharts_yuryo/serial.js"></script>
+    <script src = "./js/amcharts/plugins/export/export.min.js"></script>
+    <script src = "./js/amcharts_yuryo/light.js"></script>
+    <script src = "./js/chartcode_3lines.js"></script>
+
+  </body>
+</html>
+
