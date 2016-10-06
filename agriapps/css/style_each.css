@@ -175,3 +175,11 @@ background-color: #65baad;
   padding-bottom:35px !important;
 }
 
+#graph_title {
+  background-color: #005900;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
