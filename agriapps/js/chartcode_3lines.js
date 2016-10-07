@@ -2,43 +2,6 @@ var chart;
 var chartData = [];
 
 
-// generate some random data
-function generateNowHourlyChartData()
-{
-  var first_date = new Date();// 現在の年/月/日 時:分:秒 で取得
-  // getDate() : 現在日付の取得
-  // setDate() : 引数日付に当該オブジェクトのデータを更新
-  
-  var now_hour = first_date.getHours();
-  var hyoji_hour = now_hour + ":00";
-  
-  var g1 = 30;
-  var g2 = 40; // 基準線上
-  var g3 = 5; // 基準線下
-
-  chartData.push({
-    date: hyoji_hour,
-    g1: 22.0,
-    g2: g2,
-    g3: g3
-  });
-
-  chartData.push({
-    date: hyoji_hour,
-    g1: 22.4,
-    g2: g2,
-    g3: g3
-  });
-  
-  chartData.push({
-    date: hyoji_hour,
-    g1: 22.6,
-    g2: g2,
-    g3: g3
-  });
-
-}
-
 // 23時を超えてるかどうかを考える
 function judgeOver(now_time) 
 {
@@ -72,7 +35,7 @@ function judgeTimeToData(now_time)
       break;
     }
     case 3: {
-      ret = 17.0;
+      ret = 17.1;
       break;
     }
     case 4: {
@@ -128,7 +91,7 @@ function judgeTimeToData(now_time)
       break;
     }
     case 17: {
-      ret = 21.0;
+      ret = 21.1;
       break;
     }
     case 18: {
@@ -152,7 +115,7 @@ function judgeTimeToData(now_time)
       break;
     }
     case 23: {
-      ret = 20.0;
+      ret = 20.1;
       break;
     }
     default: {
