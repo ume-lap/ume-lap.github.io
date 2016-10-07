@@ -3,7 +3,8 @@ var chartData = [];
 
 
 // generate some random data
-function generateNowHourlyChartData() {
+function generateNowHourlyChartData()
+{
   var first_date = new Date();// 現在の年/月/日 時:分:秒 で取得
   // getDate() : 現在日付の取得
   // setDate() : 引数日付に当該オブジェクトのデータを更新
@@ -38,17 +39,162 @@ function generateNowHourlyChartData() {
 
 }
 
+// 23時を超えてるかどうかを考える
+function judgeOver(now_time) 
+{
+  if (now_time > 23) {
+    return 0;
+  }
+  return now_time;
+}
+
+// 時刻に対応する温度を返す
+function judgeTimeToData(now_time)
+{
+  var now_time_copy = now_time;
+  var ret = 0;
+
+  if (now_time_copy > 23) {
+    now_time_copy = 0;
+  }
+
+  switch (now_time_copy) {
+    case 0: {
+      ret = 16.1;
+      break;
+    }
+    case 1: {
+      ret = 16.2;
+      break;
+    }
+    case 2: {
+      ret = 16.6;
+      break;
+    }
+    case 3: {
+      ret = 17.0;
+      break;
+    }
+    case 4: {
+      ret = 17.2;
+      break;
+    }
+    case 5: {
+      ret = 17.6;
+      break;
+    }
+    case 6: {
+      ret = 17.9;
+      break;
+    }
+    case 7: {
+      ret = 18.5;
+      break;
+    }
+    case 8: {
+      ret = 18.9;
+      break;
+    }
+    case 9: {
+      ret = 19.2;
+      break;
+    }
+    case 10: {
+      ret = 20.3;
+      break;
+    }
+    case 11: {
+      ret = 21.3;
+      break;
+    }
+    case 12: {
+      ret = 22.1;
+      break;
+    }
+    case 13: {
+      ret = 24.4;
+      break;
+    }
+    case 14: {
+      ret = 23.2;
+      break;
+    }
+    case 15: {
+      ret = 22.8;
+      break;
+    }
+    case 16: {
+      ret = 21.4;
+      break;
+    }
+    case 17: {
+      ret = 21.0;
+      break;
+    }
+    case 18: {
+      ret = 20.5;
+      break;
+    }
+    case 19: {
+      ret = 20.9;
+      break;
+    }
+    case 20: {
+      ret = 20.6;
+      break;
+    }
+    case 21: {
+      ret = 20.7;
+      break;
+    }
+    case 22: {
+      ret = 20.4;
+      break;
+    }
+    case 23: {
+      ret = 20.0;
+      break;
+    }
+    default: {
+      console.log(now_time_copy);
+      console.log("defaultに侵入した");
+      ret = 19.6;
+    }
+  }
+  return ret;
+}
+
 function generateHourlyChartData() {
+  // ローカル変数調整 --------------------------------------
+
   var first_date = new Date();// 現在の年/月/日 時:分:秒 で取得
   // getDate() : 現在日付の取得
   // setDate() : 引数日付に当該オブジェクトのデータを更新
   
   var now_hour = first_date.getHours();
+  now_hour++;
+  var min_literal = "";
 
   var g1 = 30;
   var g2 = 40; // 基準線上
   var g3 = 5; // 基準線下
 
+  // 処理 --------------------------------------------------
+  for (var i = 24; i > 0; now_hour++, i--) {
+    now_hour = judgeOver(now_hour);
+    g1 = judgeTimeToData(now_hour);
+    min_literal = now_hour + ":00";
+    chartData.push({
+      date: min_literal,
+      g1: g1,
+      g2: g2,
+      g3: g3
+    });
+  }
+  
+  $("#now-temp").html(judgeTimeToData(first_date.getHours()));
+
+  /*
   chartData.push({
     date: "00:00",
     g1: 16.1,
@@ -62,7 +208,7 @@ function generateHourlyChartData() {
     g2: g2,
     g3: g3
   });
-  
+
   chartData.push({
     date: "02:00",
     g1: 16.6,
@@ -154,7 +300,13 @@ function generateHourlyChartData() {
     g3: g3
   });
 
-  chartData.push({
+  ch  chartData.push({
+    date: "02:00",
+    g1: 16.6,
+    g2: g2,
+    g3: g3
+  });
+artData.push({
     date: "15:00",
     g1: 22.8,
     g2: g2,
@@ -223,6 +375,7 @@ function generateHourlyChartData() {
     g2: g2,
     g3: g3
   });
+  */
 }
 
 
@@ -246,6 +399,7 @@ AmCharts.ready(function() {
   };
   chart.dataProvider = chartData;
   chart.categoryField = "date";
+  chart.panEventsEnabled = false;// zoom処理を受け取らない
 
   // AXES
   // category                
@@ -292,6 +446,7 @@ AmCharts.ready(function() {
   // CURSOR
   var chartCursor = new AmCharts.ChartCursor();
   chartCursor.cursorPosition = "mouse";
+  chartCursor.pan = true; // これをtrueにするとタッチデバイス上でzoomじゃなくてpanになる
   chart.addChartCursor(chartCursor);
 
   // SCROLLBAR

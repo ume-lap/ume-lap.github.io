@@ -149,30 +149,18 @@ background-color: #65baad;
   background-color: #256e1b;
   color: #ffffff;
   text-align: center;
-  vertical-align: middle;
-  font-size: 40px;
-  padding-top:35px !important;
-  padding-bottom:35px !important;
 }
 
 .min-temprature {
   background-color: #45963a;
   color: #ffffff;
   text-align: center;
-  vertical-align: middle;
-  font-size: 40px;
-  padding-top:35px !important;
-  padding-bottom:35px !important;
 }
 
 .average-temprature {
   background-color: #648160;
   color: #ffffff;
   text-align: center;
-  vertical-align: middle;
-  font-size: 40px;
-  padding-top:35px !important;
-  padding-bottom:35px !important;
 }
 
 #graph_title {
